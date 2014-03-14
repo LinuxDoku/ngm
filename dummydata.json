@@ -1,13 +1,8 @@
 {"data" : [
-// north-west
 {"name": "nw-test", "type": "planet", "x": 1199, "y": 1199},
-// north
 {"name": "north-test", "type": "planet", "x":1225, "y":1195},
-// north-east
 {"name": "ne-test", "type": "planet", "x": 1251, "y": 1199},
-// west
 {"name": "west-test", "type": "planet", "x": 1195, "y": 1225},
-// center
 {"name": "test", "type": "planet", "x": 1210, "y": 1222},
 {"name": "test", "type": "planet", "x": 1211, "y": 1222},
 {"name": "test", "type": "planet", "x": 1212, "y": 1222},
@@ -15,16 +10,12 @@
 {"name": "test", "type": "planet", "x": 1214, "y": 1222},
 {"name": "test2", "type": "planet", "x": 1234, "y": 1234},
 {"name": "a station", "type": "station", "x": 1230, "y": 1210},
-// east
 {"name": "east-test", "type": "planet", "x": 1254, "y": 1217},
 {"name": "debris field", "type": "debris", "x": 1251, "y": 1243},
 {"name": "asteroid field", "type": "asteroids", "x": 1253, "y": 1243},
 {"name": "mine field", "type": "mines", "x": 1253, "y": 1245},
 {"name": "nebular", "type": "nebular", "x": 1254, "y": 1247},
-// south-west
 {"name": "south-west test", "type": "planet", "x": 1199, "y": 1251},
-// south
 {"name": "south test", "type": "planet", "x": 1225, "y":1255},
-// south-east
 {"name": "south-east test", "type": "planet", "x": 1255, "y": 1255}
 ]}
