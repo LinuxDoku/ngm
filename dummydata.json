@@ -27,4 +27,4 @@
 {"name": "south test", "type": "planet", "x": 1225, "y":1255},
 // south-east
 {"name": "south-east test", "type": "planet", "x": 1255, "y": 1255}
-]
+]}
