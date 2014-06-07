@@ -17,7 +17,7 @@ $(document).ready( function() {
 
         makeSVG: function(tag, attribs, value)
         {
-            attribs = attribs || null;
+            attribs = attribs || {};
 
             var el = document.createElementNS('http://www.w3.org/2000/svg', tag);
 
