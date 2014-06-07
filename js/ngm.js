@@ -47,7 +47,7 @@ $(document).ready( function() {
             var range = ngm.range,
                 scale = ngm.scale,
                 xMin = Math.floor(ngm.coordx - ngm.range/2),
-                yMin = Math.floor(ngm.coordy - ngm.range/2)
+                yMin = Math.floor(ngm.coordy - ngm.range/2),
 
                 selector = ngm.selector + ' .ngm',
 
@@ -436,13 +436,14 @@ $(document).ready( function() {
          * @param layerObjects
          */
         drawLayerObjects: function(targetDomElement, layerConfig, layerObjects){
-            var group = ngm.makeSVG('g', {'class': layerConfig.class});
+            var group = ngm.makeSVG('g', {'class': layerConfig.class}),
+                attribs, m;
 
             if (layerConfig.objectDefaultShape == 'circle') {
                 for (var i=0; i<layerObjects.length; i++) {
-                    var r = 0.5,
-                        m = 0.5 * ngm.range,
-                        attribs = layerObjects[i].attribs;
+                    var r = 0.5;
+                    m = 0.5 * ngm.range;
+                    attribs = layerObjects[i].attribs;
                     group.appendChild(ngm.makeSVG('circle', {
                         'title': attribs.title+'('+layerObjects[i].x+','+layerObjects[i].y+')',
                         'cx': ((parseInt(layerObjects[i].x) + r + m ) % ngm.range) * ngm.scale,
@@ -457,8 +458,8 @@ $(document).ready( function() {
                 }
             } else {
                 for (var j=0; j<layerObjects.length; j++) {
-                    var attribs = layerObjects[j].attribs,
-                        m = Math.floor(ngm.range/2)*ngm.scale;
+                    attribs = layerObjects[j].attribs;
+                    m = Math.floor(ngm.range/2)*ngm.scale;
                     group.appendChild(ngm.makeSVG('rect', {
                         'title': attribs.title,
                         'x': (parseInt(layerObjects[j].x) % ngm.range*ngm.scale)+m,
@@ -493,13 +494,15 @@ $(document).ready( function() {
                 console.log('new center xy:', ngm.coordx, ngm.coordy);
 
                 setTimeout(function() {
+                    var oldclass, newclass;
+
                     // delete west
                     $('.grid-west').remove();
                     // center -> west
                     elements = document.querySelectorAll('.grid-svg:not(.grid-west):not(.grid-east)');
                     for (i=0; i<elements.length; i++) {
-                        var oldclass = elements[i].getAttribute('class');
-                        var newclass = oldclass + ' grid-west';
+                        oldclass = elements[i].getAttribute('class');
+                        newclass = oldclass + ' grid-west';
                         elements[i].setAttribute('class', newclass);
                     }
                     // east -> center
